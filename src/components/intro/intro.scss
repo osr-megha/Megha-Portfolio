@@ -1,0 +1,94 @@
+@import '../../global.scss';
+
+.intro {
+     background-color: white;
+  //   display: flex;
+
+  height: 100%;
+  width: 100%;
+
+  .mask {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    .introImg {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      object-fit: cover;
+    }
+  }
+
+  .mask::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.5;
+  }
+
+  .content {
+   position: absolute;
+   transform: translate(-50%, -50%);
+   top:50%;
+   left:50%;
+   color: white;
+   text-align: center;
+   padding: 0.6rem 0 1.5rem;
+
+   h2{
+      padding: 0.6rem 0 1.5rem;
+   }
+
+   h1{
+      font-size: 4rem;
+      padding: 0.6rem 0 1.5rem;
+   }
+
+   p{
+      font-size: 1.4rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      padding: 0.6rem 0 1.5rem;
+
+   }
+
+  }
+
+  a{
+   position: absolute;
+   bottom: 10px;
+   left: 60%;
+
+   .arrowIcon{
+      width: 30px;
+      text-decoration: none;
+      color: white;
+      animation: arrowBlink 2s infinite;
+   }
+
+   @keyframes arrowBlink {
+      100%{
+         opacity: 0;
+      }
+   }
+ }
+
+}
+
+@media screen and (max-width:640px){
+   .intro .content h1{
+      font-size: 3rem;
+   }
+
+   .intro .content h2 p{
+      font-size: 1.4rem;
+   }
+
+
+}
